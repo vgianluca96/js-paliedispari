@@ -12,7 +12,7 @@ let pariDispari;
 let userNumber;
 let computerNumber = Math.floor(Math.random()*5)+1;
 
-// Ciclo per digitare pari o dispari con controllo
+// Ciclo per digitare pari o dispari con controlli vari
 while (!proseguo) {
 
     pariDispari = prompt('Scegli pari o dispari');
@@ -29,7 +29,7 @@ console.log('ok pari dispari')
 
 proseguo = false;
 
-// Ciclo per digitare numero con controllo
+// Ciclo per digitare numero con controlli vari
 while (!proseguo) {
 
     userNumber = Number(prompt('digita un numero intero compreso tra 1 e 5'));
@@ -44,7 +44,7 @@ while (!proseguo) {
 
 console.log('ok numero')
 
-
+// Determino chi ha vinto
 if (ParieDispari(userNumber,computerNumber)) {
     console.log('vince giocatore');
 } else {
