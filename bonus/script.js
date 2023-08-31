@@ -7,53 +7,43 @@ Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzion
 */
 
 // Dichiarazione variabili
-let proseguo = false;
 let pariDispari;
 let userNumber;
-let computerNumber = Math.floor(Math.random()*5)+1;
+let computerNumber;
 
-// Ciclo per digitare pari o dispari con controlli vari
-while (!proseguo) {
+let inputPariDispari = document.getElementById('pariDispari');
+let inputuserNumber = document.getElementById('userNumber');
+let btnAvvio = document.getElementById('avviaGioco');
 
-    pariDispari = prompt('Scegli pari o dispari');
-    
-    if (pariDispari == 'pari' || pariDispari == 'dispari') {
-        proseguo = true;
-    } else {
-        alert('Devi digitare "pari" oppure "dispari"');
-    }
+btnAvvio.addEventListener('click', function() {
 
-}
+    computerNumber = Math.floor(Math.random()*5)+1;
+    pariDispari = inputPariDispari.value;
+    userNumber = Number(inputuserNumber.value);
 
-console.log('ok pari dispari')
-
-proseguo = false;
-
-// Ciclo per digitare numero con controlli vari
-while (!proseguo) {
-
-    userNumber = Number(prompt('digita un numero intero compreso tra 1 e 5'));
-    
     if (!isNaN(userNumber) && (userNumber >= 1 && userNumber <= 5) && (Number.isInteger(userNumber))) {
-        proseguo = true;
+        
+        //Stampo risultato in pagina
+        document.getElementById('computerRis').innerHTML = ('Numero generato dal computer: ' + computerNumber);
+        document.getElementById('sommaNum').innerHTML = ('Somma numero immesso da utente e generato dal computer: ' + (computerNumber + userNumber));
+
+        // Determino chi ha vinto
+        if (ParieDispari(userNumber, computerNumber)) {
+            console.log('vince giocatore');
+            document.getElementById('dichiarazVincitore').innerHTML = ('vince giocatore');
+        } else {
+            console.log('vince computer');
+            document.getElementById('dichiarazVincitore').innerHTML = ('vince computer');
+        }
     } else {
         alert('Devi digitare un numero intero compreso tra 1 e 5');
     }
 
-}
-
-console.log('ok numero')
-
-// Determino chi ha vinto
-if (ParieDispari(userNumber,computerNumber)) {
-    console.log('vince giocatore');
-} else {
-    console.log('vince computer');
-}
+})
 
 
 /* ########## function ########## */
-
+ 
 function ParieDispari (userNumber,computerNumber) {
 
     let userWin;
@@ -76,6 +66,7 @@ Palidroma
 Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
 */
 
+/*
 let word = prompt('Inserisci una parola');
 //console.log(word);
 
@@ -84,10 +75,11 @@ if (isPalindrome(word)) {
 } else {
     console.log(word + ' non è un palindromo')
 }
-
+*/
 
 /* ########## function ########## */
 
+/*
 function isPalindrome (wordToCheck) {
 
     // Inizializzo variabili utili
@@ -118,3 +110,4 @@ function isPalindrome (wordToCheck) {
 
 }
 
+*/
