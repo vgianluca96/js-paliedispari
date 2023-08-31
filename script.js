@@ -6,9 +6,66 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 */
 
+let proseguo = false;
+let pariDispari;
+
+while (!proseguo) {
+
+    pariDispari = prompt('Scegli pari o dispari');
+    
+    if (pariDispari == 'pari' || pariDispari == 'dispari') {
+        proseguo = true;
+    } else {
+        alert('Devi digitare "pari" oppure "dispari"');
+    }
+
+}
+
+console.log('ok pari dispari')
+
+proseguo = false;
+let userNumber;
+
+while (!proseguo) {
+
+    userNumber = Number(prompt('digita un numero interno compreso tra 1 e 5'));
+    
+    if (!isNaN(userNumber) && (userNumber >= 1 && userNumber <= 5)) {
+        proseguo = true;
+    } else {
+        alert('Devi digitare un numero intero compreso tra 1 e 5');
+    }
+
+}
+
+console.log('ok numero')
+
+let computerNumber = Math.floor(Math.random()*5)+1;
+
+if (ParieDispari(userNumber,computerNumber)) {
+    console.log('vince giocatore');
+} else {
+    console.log('vince computer');
+}
 
 
+/* ########## function ########## */
 
+function ParieDispari (userNumber,computerNumber) {
+
+    let userWin;
+    let sumNumbers = userNumber + computerNumber;
+    console.log(sumNumbers);
+
+    if ((pariDispari == 'pari' && sumNumbers%2 == 0) || (pariDispari == 'dispari' && sumNumbers%2 != 0)) {
+        userWin = true; 
+    } else {
+        userWin = false;
+    }
+
+    return userWin
+
+}
 
 
 /*
@@ -20,10 +77,13 @@ let word = prompt('Inserisci una parola');
 //console.log(word);
 
 if (isPalindrome(word)) {
-    console.log('la parola è un palindromo')
+    console.log(word + ' è un palindromo')
 } else {
-    console.log('la parola non è un palindromo')
+    console.log(word + ' non è un palindromo')
 }
+
+
+/* ########## function ########## */
 
 function isPalindrome (wordToCheck) {
 
@@ -40,7 +100,7 @@ function isPalindrome (wordToCheck) {
     
     }
     
-    console.log(wordReverse);
+    //console.log(wordReverse);
     
     // Creazione variabile booleana che mi dica se la parola è palindromo o no
     let palindromeCheck = false;
