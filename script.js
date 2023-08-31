@@ -6,9 +6,13 @@ L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 */
 
+// Dichiarazione variabili
 let proseguo = false;
 let pariDispari;
+let userNumber;
+let computerNumber = Math.floor(Math.random()*5)+1;
 
+// Ciclo per digitare pari o dispari con controllo
 while (!proseguo) {
 
     pariDispari = prompt('Scegli pari o dispari');
@@ -24,13 +28,13 @@ while (!proseguo) {
 console.log('ok pari dispari')
 
 proseguo = false;
-let userNumber;
 
+// Ciclo per digitare numero con controllo
 while (!proseguo) {
 
-    userNumber = Number(prompt('digita un numero interno compreso tra 1 e 5'));
+    userNumber = Number(prompt('digita un numero intero compreso tra 1 e 5'));
     
-    if (!isNaN(userNumber) && (userNumber >= 1 && userNumber <= 5)) {
+    if (!isNaN(userNumber) && (userNumber >= 1 && userNumber <= 5) && (Number.isInteger(userNumber))) {
         proseguo = true;
     } else {
         alert('Devi digitare un numero intero compreso tra 1 e 5');
@@ -40,7 +44,6 @@ while (!proseguo) {
 
 console.log('ok numero')
 
-let computerNumber = Math.floor(Math.random()*5)+1;
 
 if (ParieDispari(userNumber,computerNumber)) {
     console.log('vince giocatore');
