@@ -108,7 +108,7 @@ function isPalindrome (wordToCheck) {
     // Creazione variabile booleana che mi dica se la parola è palindromo o no
     let palindromeCheck = false;
     
-    if (wordReverse == word) {
+    if (wordReverse == wordToCheck) {
         palindromeCheck = true;
     }
     
