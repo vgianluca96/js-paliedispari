@@ -33,11 +33,11 @@ btnAvvio.addEventListener('click', function() {
         if (ParieDispari(userNumber, computerNumber)) {
             console.log('vince giocatore');
             //Stampo risultato in pagina
-            document.getElementById('dichiarazVincitore').innerHTML = ('vince giocatore');
+            document.getElementById('dichiarazVincitore').innerHTML = ('Vince giocatore');
         } else {
             console.log('vince computer');
             //Stampo risultato in pagina
-            document.getElementById('dichiarazVincitore').innerHTML = ('vince computer');
+            document.getElementById('dichiarazVincitore').innerHTML = ('Vince computer');
         }
     } else {
         alert('Devi digitare un numero intero compreso tra 1 e 5');
