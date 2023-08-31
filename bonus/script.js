@@ -53,6 +53,7 @@ btnAvvio.addEventListener('click', function() {
     let sumNumbers = userNumber + computerNumber;
     console.log(sumNumbers);
 
+    // Check sulla somma in base alla scelta pari/dispari
     if ((pariDispari == 'pari' && sumNumbers%2 == 0) || (pariDispari == 'dispari' && sumNumbers%2 != 0)) {
         userWin = true; 
     } else {

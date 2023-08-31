@@ -4,44 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalieDispari</title>
+
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
 </head>
 <body>
 
-    <div>
-        <div>
-            <h1>Pari e dispari</h1>
-            
-            <select name="pariDispari" id="pariDispari">
+    <div class="container p-3">
+        <h1>Pari e dispari</h1>
+        <div class="input-group">
+            <select name="pariDispari" id="pariDispari" class="form-select">
                 <option value="pari">Pari</option>
                 <option value="dispari">Dispari</option>
             </select>
     
-            <input type="number" placeholder="Digita numero intero da 1 a 5" id="userNumber">
-    
-            <button id="avviaGioco">Avvia Gioco</button>
+            <input type="number" placeholder="Digita numero intero da 1 a 5" id="userNumber" class="form-control">
+
+            <button id="avviaGioco" class="btn btn-primary">Avvia Gioco</button>
         </div>
-        <div>
-            <div id="computerRis"></div>
-            <div id="sommaNum"></div>
-            <div id="dichiarazVincitore"></div>
+        <div class="card mt-2">
+            <div class="card-header"><h3>Risultato</h3></div>  
+            <div class="card-body">
+                <div id="computerRis"></div>
+                <div id="sommaNum"></div>
+                <div id="dichiarazVincitore"></div>
+            </div>
         </div>
     </div>
 
-    <div>
-        <div>
-            <h1>Palindromo</h1>
+    <div class="container p-3">
+        <h1>Palindromo</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Digita una parola" id="word" class="form-control">
     
-            <input type="text" placeholder="Digita una parola" id="word">
-    
-            <button id="avviaPalindromo">Scopri se è palindromo</button>
+            <button id="avviaPalindromo" class="btn btn-primary">Scopri se è palindromo</button>
         </div>
-        <div>
-            <div id="risultatoPalindromo"></div>
+        <div class="card mt-2">
+            <div class="card-header"><h3>Risultato</h3></div>  
+            <div class="card-body">
+                <div id="risultatoPalindromo"></div>
+            </div>
         </div>
     </div>
 
 
-    
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- link a js -->
     <script src="./script.js"></script>
     
 </body>
