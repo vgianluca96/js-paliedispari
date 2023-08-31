@@ -17,10 +17,12 @@ let btnAvvio = document.getElementById('avviaGioco');
 
 btnAvvio.addEventListener('click', function() {
 
-    computerNumber = Math.floor(Math.random()*5)+1;
+    // Assegnazione valori alle variabili
     pariDispari = inputPariDispari.value;
     userNumber = Number(inputuserNumber.value);
+    computerNumber = Math.floor(Math.random()*5)+1;
 
+    // Controllo che il numero sia intero da 1 a 5
     if (!isNaN(userNumber) && (userNumber >= 1 && userNumber <= 5) && (Number.isInteger(userNumber))) {
         
         //Stampo risultato in pagina
@@ -30,9 +32,11 @@ btnAvvio.addEventListener('click', function() {
         // Determino chi ha vinto
         if (ParieDispari(userNumber, computerNumber)) {
             console.log('vince giocatore');
+            //Stampo risultato in pagina
             document.getElementById('dichiarazVincitore').innerHTML = ('vince giocatore');
         } else {
             console.log('vince computer');
+            //Stampo risultato in pagina
             document.getElementById('dichiarazVincitore').innerHTML = ('vince computer');
         }
     } else {
@@ -43,8 +47,7 @@ btnAvvio.addEventListener('click', function() {
 
 
 /* ########## function ########## */
- 
-function ParieDispari (userNumber,computerNumber) {
+ function ParieDispari (userNumber,computerNumber) {
 
     let userWin;
     let sumNumbers = userNumber + computerNumber;
@@ -66,6 +69,7 @@ Palidroma
 Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
 */
 
+// Dichiarazione variabili
 let inputWord = document.getElementById('word');
 let btnAvvioPalindromo = document.getElementById('avviaPalindromo');
 
@@ -82,14 +86,13 @@ btnAvvioPalindromo.addEventListener('click', function(){
     } else {
         console.log(word + ' non è un palindromo')
         //Stampo risultato in pagina
-        document.getElementById('risultatoPalindromo').innerHTML = (word + 'non è un palindromo');
+        document.getElementById('risultatoPalindromo').innerHTML = (word + ' non è un palindromo');
     }
 
 })
 
 
 /* ########## function ########## */
-
 function isPalindrome (wordToCheck) {
 
     // Inizializzo variabili utili
