@@ -66,25 +66,36 @@ Palidroma
 Chiedere all’utente di inserire una parola Creare una funzione per capire se la parola inserita è palindroma
 */
 
-/*
-let word = prompt('Inserisci una parola');
-//console.log(word);
+let inputWord = document.getElementById('word');
+let btnAvvioPalindromo = document.getElementById('avviaPalindromo');
 
-if (isPalindrome(word)) {
-    console.log(word + ' è un palindromo')
-} else {
-    console.log(word + ' non è un palindromo')
-}
-*/
+btnAvvioPalindromo.addEventListener('click', function(){
+
+    let word = inputWord.value;
+    //console.log(word);
+    
+    if (isPalindrome(word)) {
+        console.log(word + ' è un palindromo')
+        //Stampo risultato in pagina
+        document.getElementById('risultatoPalindromo').innerHTML = (word + ' è un palindromo');
+
+    } else {
+        console.log(word + ' non è un palindromo')
+        //Stampo risultato in pagina
+        document.getElementById('risultatoPalindromo').innerHTML = (word + 'non è un palindromo');
+    }
+
+})
+
 
 /* ########## function ########## */
 
-/*
 function isPalindrome (wordToCheck) {
 
     // Inizializzo variabili utili
     let wordLength = wordToCheck.length - 1;
     //console.log(wordLength);
+    console.log(wordToCheck);
     let wordReverse = '';
     
     // ciclo per creare parola letta al contrario
@@ -95,12 +106,12 @@ function isPalindrome (wordToCheck) {
     
     }
     
-    //console.log(wordReverse);
+    console.log(wordReverse);
     
     // Creazione variabile booleana che mi dica se la parola è palindromo o no
     let palindromeCheck = false;
     
-    if (wordReverse == word) {
+    if (wordReverse == wordToCheck) {
         palindromeCheck = true;
     }
     
@@ -110,4 +121,3 @@ function isPalindrome (wordToCheck) {
 
 }
 
-*/
